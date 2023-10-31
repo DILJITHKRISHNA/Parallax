@@ -1,38 +1,390 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@100;400&display=swap');*,
+*, 
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    font-family: "Poppins", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+::selection{
+  background-color: #0b372dbb;
+}
+
+.logo{
+    width: 100px;
+    
+}
+
+header{
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    padding: 0.9rem 0;
+    top: 0;
+    left: 0;
+}
+
+header nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 2px solid white; /* Add this line for the bottom border */
+
+}
+
+
+
+header ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+
+}
+
+header ul a{
+    text-decoration: none;
+    padding: 0 1.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.83rem;
+    color: white;
+    font-weight: bold;
+}
+
+.search a{
+    font-size: 1.05rem;
+    padding: 0 3rem;
+}
+
+.hamburger{
+    padding-left: 1.5rem;
+}
+.hamburger a{
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    border-radius: 50%;
+    background-color: rgba(115, 115, 115, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger .bar {
+    position: relative;
+    width: 52%;
+    height: 1.3px;
+    background-color: #fff;
+    border-radius: 2px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .hamburger .bar::before,
+  .hamburger .bar::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 60%;
+    transform: translate(-50%);
+    height: 104%;
+    background-color: inherit;
+    border-radius: 2px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .hamburger .bar::before {
+    top: -4.5px;
   }
+  
+  .hamburger .bar::after {
+    top: 4.5px;
+  }
+  
+  main {
+    position: relative;
+    background-image: url('img/background.png');
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
+
+  .parallax{
+    pointer-events: none;
+    transition: 0.45s cubic-bezier(0.2,0.49,0.32,0.99);
+  }
+
+  .bg-img{
+    position: absolute;
+    width: 194.44%;
+    top: 1.86%;
+    left: 50.69%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  .fog-7{
+    position: absolute;
+    z-index: 2;
+    width: 132%;
+    top: 37.7%;
+    left: 70.8%;
+    transform: translate(-50%, -50%);
+  }
+
+  .mountain-10 {
+    position: absolute;
+    z-index: 3;
+    width: 30%; /* Or use 30vw (30% of the viewport width) */
+    top: 30vh; /* Or use 30% */
+    left: 30vw; /* Or use 30% */
+    transform: translate(-50%, -50%);
+  }
+  
+
+  .fog-6{
+    position: absolute;
+    z-index: 4;
+    width: 1610px;
+    top: calc(50% + 85px);
+    left: calc(50% + 10px);
+    transform: translate(-50%, -50%);
+  }
+
+  .mountain-9{
+    position: absolute;
+    z-index: 5;
+    width: 470px;
+    top: calc(50% + 113px);
+    left: calc(50% - 457px);
+    transform: translate(-50%, -50%);
+  }
+
+  .mountain-8{
+    position: absolute;
+    z-index: 6;
+    width: 810px;
+    top: calc(50% + 86px);
+    left: calc(50% - 202px);
+    transform: translate(-50%, -50%);
+  }
+
+  .fog-5{
+    position: absolute;
+    z-index: 7;
+    width: 450px;
+    top: calc(50% + 160px);
+    left: calc(50% + 20px);
+    transform: translate(-50%, -50%);
+  }
+
+  .mountain-7{
+    position: absolute;
+    z-index: 8;
+    width: 538px;
+    top: calc(50% + 123px);
+    left: calc(50% + 305px);
+    transform: translate(-50%, -50%);
+  }
+
+  .text{
+    position: absolute;
+    z-index: 9;
+    top: calc(50% - 130px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-transform: uppercase;
+    pointer-events: auto;
+    color: #fff;
+  }
+
+  .text h2{
+    font-weight: 100;
+    font-size: 6.5rem;
+    line-height: 0.88;
+  }
+
+  .text h1{
+    font-weight: 800;
+    font-size: 8rem;
+    line-height: 0.88;
+  }
+
+  .mountain-6{
+    position: absolute;
+    z-index: 10;
+    width: 408px;
+    top: calc(50% + 60px);
+    left: calc(50% + 590px);
+  }
+  .fog-4{
+    position: absolute;
+    z-index: 11;
+    width: 690px;
+    top: calc(50% + 223px);
+    left: calc(50% - 60px);
+  }
+
+  .mountain-5{
+    position: absolute;
+    z-index: 12;
+    width: 625px;
+    top: calc(50% + 250px);
+    left: calc(50% + 130px);
+  }
+
+  .fog-3{
+    position: absolute;
+    z-index: 13;
+    width: 1600px;
+    top: calc(50% + 110px);
+    left: calc(50% - 15px);
+    transform: translate(-50%, -50%);
+  }
+
+  .mountain-4{
+    position: absolute;
+    z-index: 14;
+    width: 780px;
+    top: calc(50% + 196px);
+    left: calc(50% - 381.5px);
+    transform: translate(-50%, -50%);
+  }
+  
+  .mountain-3{
+    position: absolute;
+    z-index: 15;
+    width: 738px;
+    top: calc(50% + 50px);
+    left: calc(50% + 700px);
+    transform: translate(-50%, -50%);
+  }
+  .fog-2{
+    position: absolute;
+    z-index: 16;
+    width: 1560px;
+    top: calc(50% + 147px);
+    left: calc(50% - 30px);
+    transform: translate(-50%, -50%);
+  }
+  .mountain-2{
+    position: absolute;
+    z-index: 17;
+    width: 690px;
+    top: calc(50% + 175px);
+    left: calc(50% + 412px);
+    transform: translate(-50%, -50%);
+  }
+  
+
+  .mountain-1{
+    position: absolute;
+    z-index: 18;
+    width: 630px;
+    top: calc(50% + 17px);
+    left: calc(50% - 601px);
+    transform: translate(-50%, -50%);
+  }
+
+  .sun-rays {
+    position: absolute;
+    z-index: 19;
+    top: 0;
+    right: 0;
+    width: 595px;
+    pointer-events: none;
+
+  }
+
+  .black-shadow {
+    position: absolute;
+    z-index: 20;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    pointer-events: none;
+
+  }
+
+  .fog-1{
+    position: absolute;
+    z-index: 21;
+    width: 111.8%;
+    top: calc(100% - 355px);
+    left: 50.69%;
+    transform: translate(-50%, -50%);
+  }
+
+  .vignette{
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: radial-gradient(
+      ellipse at center, 
+      rgba(0,0,0,0) 65%,
+      rgba(0, 0, 0, 0.7)
+      );
+      pointer-events: none;
+  }
+
+  @media (max-width: 725px) {
+    .text h1{
+      font-size: 5rem;
+      line-height: 1.1;
+    }
+
+    .text h2{
+      font-size: 4.7rem;
+      line-height: 1.1;
+    }
+    header nav{
+      padding: 0 1rem;
+    }
+    .logo{
+      width: 75px
+    }
+
+    header ul a{
+      font-size: 0.73rem;
+      padding: 0 0.9rem;
+    }
+
+    .search a{
+      font-size: 0.85rem;
+      padding: 0 1.8rem;
+    }
+    .hamburger{
+      padding-left: 0.9rem;
+    }
+
+    .hamburger a{
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  @media (max-width: 520px){
+    .text h1{
+      font-size: 3.3rem;
+    }
+
+    .text h2{
+      font-size: 2.6rem;
+    }
+  }
+/* some of the images still not responsive */
